@@ -1,7 +1,6 @@
 import { Col, Container, Row } from "photoncss/lib/react";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Adsense from "../components/Adsense";
 import GameManager from "../components/GameManager";
 import GameNotFound from "../components/GameNotFound";
 import GameRenderer from "../components/GameRenderer";
@@ -51,13 +50,7 @@ export default function View(): JSX.Element {
 						</div>
 					</div>
 				</Col>
-				<Col xl={ 2 }>
-					<Adsense
-						style={ { display: "block", textAlign: "center", minWidth: 250, height: "100%" } }
-						adLayout="in-article"
-						adFormat="fluid"
-						fullWidthResponsive="false"/>
-				</Col>
+				<Col xl={ 2 }></Col>
 
 			</Row>
 		</Container>

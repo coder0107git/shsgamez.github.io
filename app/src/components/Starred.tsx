@@ -1,6 +1,5 @@
 import { Col } from "photoncss/lib/react";
 import React, { useEffect, useState } from "react";
-import Adsense from "./Adsense";
 import games, { Game } from "../../games";
 import GameCard from "./GameCard";
 import { getGameID } from "../util/gameHash";
@@ -34,12 +33,6 @@ export default function Component(): JSX.Element | null {
 				<h3>Favorites</h3>
 				<span className="badge" style={{ marginLeft: 16 }}>{ stars.length } Game{ stars.length === 1 ? "":"s" }</span>
 			</div>
-
-			<Adsense
-				style={{ display: "block", textAlign: "center" }}
-				adLayout="in-article"
-				adFormat="fluid"
-				fullWidthResponsive="true"/>
 
 			{ games
 				.filter(game => stars.includes(getGameID(game)))
