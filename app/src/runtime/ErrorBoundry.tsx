@@ -46,13 +46,10 @@ export default class ErrorBoundary extends Component<Props, State> {
 
 		// Hard reload page if user confirms in production otherwise just reload
 		if (
-			PRODUCTION &&
 			window.confirm( // eslint-disable-line no-alert
 				"An error occurred. Would you like to reload in an attempt to fix this problem?"
 			)
 		) {
-			location.reload();
-		} else if (!PRODUCTION) {
 			location.reload();
 		}
 
