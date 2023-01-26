@@ -31,7 +31,7 @@ jobs:
       # Install node modules
       - name: Install node modules
         run: |
-          npm ci
+          npm i
 
       # Attempt to build
       - name: Run ESLint
