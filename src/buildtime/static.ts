@@ -10,7 +10,6 @@ import { getGameID, slug } from "../../app/src/util/gameHash";
 		.sort((a, b) => a.name > b.name ? 1 : -1)
 		.map(async game => {
 			const out = path.resolve(`../../../public_html/g/${getGameID(game)}/${slug(game.name)}.html`);
-			
 			await mkdirp(path.resolve(out, ".."));
 			await copyFile(path.resolve("../../../public_html/index.html"), out);
 		})
