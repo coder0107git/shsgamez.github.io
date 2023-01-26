@@ -3,8 +3,6 @@ name: Bump
 on:
   push:
     branches: [ "master" ]
-    
-  page_build:
 
 jobs:
   bump-version:
