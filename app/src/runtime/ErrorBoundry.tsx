@@ -21,13 +21,18 @@ export default class ErrorBoundary extends Component<Props, State> {
 	async componentDidCatch(error: Error, errorInfo: ErrorInfo): Promise<void> {
 
 		// If its in production...
-		if (!PRODUCTION) {
+		/*if (!PRODUCTION) {
 			const ErrorOverlay = customElements.get("vite-error-overlay");
 			if (!ErrorOverlay) return;
 			const overlay = new ErrorOverlay(error);
 			document.body.appendChild(overlay);
 			return;
-		}
+		}*/
+		const ErrorOverlay = customElements.get("vite-error-overlay");
+        if (!ErrorOverlay) return;
+        const overlay = new ErrorOverlay(error);
+        document.body.appendChild(overlay);
+        return;
 
 		// Get web manifest
 		const manifest = await Manifest.read();
@@ -44,13 +49,13 @@ export default class ErrorBoundary extends Component<Props, State> {
 			})
 		});
 
-		// Hard reload page if user confirms in production otherwise just reload
+		// Hard reload page if user confirms
 		if (
 			window.confirm( // eslint-disable-line no-alert
 				"An error occurred. Would you like to reload in an attempt to fix this problem?"
 			)
 		) {
-			location.reload();
+			//location.reload();
 		}
 
 	}
